@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.4737913,0.883568061 C16.4072462,-0.0498869323 17.9224602,-0.0481025868 18.8651594,0.894596648 L19.7054034,1.7348406 C20.6449493,2.67438652 20.6485289,4.19411174 19.7164319,5.12620875 L8.67867966,16.163961 L3.45246732,17.9060318 C2.82410607,18.1154856 2.48117508,17.785912 2.69396819,17.1475327 L4.43603897,11.9213203 L15.4737913,0.883568061 L15.4737913,0.883568061 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="17.7819802" height="17.7833604" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy" transform="translate(-396.000000, -75.000000)">
+            <g id="Header">
+                <g id="Heading" transform="translate(120.000000, 61.000000)">
+                    <g id="Edit" transform="translate(275.000000, 13.000000)">
+                        <g id="Icon" transform="translate(2.400000, 1.000000)">
+                            <path d="M0,21.2 L19.2,21.2" id="Line-42" stroke="#36434D" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <use id="Line-41" stroke="#35424C" mask="url(#mask-2)" stroke-width="2" stroke-linecap="square" xlink:href="#path-1"></use>
+                            <path d="M14.2669048,5.13309524 L16.6669048,5.13309524" id="Line-40" stroke="#35424C" stroke-linecap="square" transform="translate(15.466905, 5.133095) rotate(-315.000000) translate(-15.466905, -5.133095) "></path>
+                            <path d="M5.78162338,13.6183766 L8.18162338,13.6183766" id="Line-39" stroke="#35424C" stroke-linecap="square" transform="translate(6.981623, 13.618377) rotate(-315.000000) translate(-6.981623, -13.618377) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
