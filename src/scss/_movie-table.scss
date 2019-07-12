@@ -1,0 +1,130 @@
+.films-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.film-item {
+  position: relative;
+}
+
+.films-list.mod-rows {
+  .film-item--poster {
+    width: 225px;
+    display: inline-block;
+    vertical-align: top;
+    img {
+      max-width: 100%;
+    }
+  }
+  .film-item--info {
+    width: calc(100% - 255px);
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 25px;
+    & > * {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+  .film-item {
+    position: relative;
+    padding: 30px 0;
+    width: 100%;
+    margin: 0 20px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .film-item--title {
+    font-size: 24px;
+    letter-spacing: 5.3px;
+    color: #303234;
+    margin-bottom: 20px;
+    font-weight: 600;
+    a {
+      color: #303234;
+      text-decoration: none;
+      &:hover {
+        color: #0088cc;
+        text-decoration: underline;
+      }
+    }
+  }
+  .film-item--info-row {
+    margin-bottom: 25px;
+    .info-row--item {
+      display: inline-block;
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: #303234;
+      & + .info-row--item {
+        margin-left: 30px;
+      }
+      &.mod-grey-text {
+        color: #9b9b9b;
+      }
+    }
+  }
+  .film-info--def {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 2px;
+    .def--name {
+      font-weight: 600;
+      display: inline-block;
+      color: #000000;
+    }
+    .def-descr {
+      display: inline-block;
+      color: #747e80;
+    }
+  }
+  .film-info--descr {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 2.29;
+    color: #000000;
+    letter-spacing: 1.8px;
+  }
+}
+
+.films-list.mod-tile {
+  .hide-on-tile {
+    display: none !important;
+  }
+  .film-item {
+    width: calc(25% - 20px);
+    margin: 5px 10px;
+    min-height: 0.125rem;
+    img {
+      max-width: 100%;
+    }
+  }
+  .film-item--title {
+    font-size: 14px;
+    font-weight: 600;
+    a {
+      text-decoration: none;
+      &:hover {
+        color: #0088cc;
+        text-decoration: underline;
+      }
+    }
+  }
+  .film-year {
+    display: none;
+  }
+  .film-item--info-row {
+    .info-row--item {
+      display: inline-block;
+      font-size: 16px;
+      line-height: 1.5;
+      &.mod-grey-text {
+        color: #9b9b9b;
+      }
+    }
+  }
+  .film-info--def,
+  .film-info--descr {
+    display: none;
+  }
+}

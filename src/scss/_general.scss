@@ -1,0 +1,14 @@
+.container {
+  max-width: 100%;
+  margin: 0 10px;
+  @media (min-width: 940px) {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

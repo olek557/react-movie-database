@@ -1,0 +1,57 @@
+.black-link {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+  &:hover {
+    color: rgba(0, 0, 0, 0.66);
+  }
+}
+
+.btn-icon {
+  border: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  font-size: 28px;
+  cursor: pointer;
+  &.active {
+    color: #0088cc
+  }
+  & + .btn-icon {
+    margin-left: 15px;
+  }
+}
+
+.back-btn {
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #000000;
+  padding: 20px;
+  &:before {
+    content: "";
+    border-width: 7px;
+    border-color: transparent black transparent transparent;
+    border-style: solid;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -6px;
+  }
+}
+
+.delete-btn {
+  &:before {
+    content: url(../images/icons/Trash.svg);
+  }
+}
+
+.btn-favorite {
+  @extend .btn-icon;
+  font-size: 20px;
+  color: gold;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

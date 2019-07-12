@@ -1,0 +1,28 @@
+.icon-tile {
+  &:before {
+    content: url("../images/icons/gride.svg");
+  }
+}
+
+.icon-rows {
+  &:before {
+    content: url("../images/icons/List.svg");
+  }
+}
+.icon-fb {
+  &:before {
+    content: url("../images/icons/facebook-2.svg");
+  }
+}
+
+.icon-tw {
+  &:before {
+    content: url("../images/icons/twitter-1.svg");
+  }
+}
+
+.icon-tl {
+  &:before {
+    content: url("../images/icons/linkedin-1.svg");
+  }
+}

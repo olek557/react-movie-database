@@ -1,0 +1,31 @@
+.footer {
+  padding: 100px 0 65px;
+  text-align: center;
+  .social-links {
+    margin-bottom: 40px;
+    .btn-icon {
+      vertical-align: middle;
+      & + .btn-icon {
+        margin-left: 30px;
+      }
+      &:before {
+        vertical-align: middle;
+      }
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.3px;
+    color: #bebebe;
+    vertical-align: middle;
+  }
+  .about-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 50px;
+    letter-spacing: 2.4px;
+    font-size: 10px;
+    line-height: 18px;
+  }
+}
