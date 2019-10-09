@@ -11,9 +11,6 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 class MovieTable extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   moviesList: this.props.list
-    // };
   }
   handleClickOnFavoriteButton(movie) {
     if (this.props.favorites.indexOf(movie.id) === -1) {
@@ -26,7 +23,6 @@ class MovieTable extends React.Component {
     }, 0);
   }
 
-  // componentDidUpdate() {}
   renderMovies({ moviesList }) {
     if (moviesList) {
       return Array.from(moviesList).map(movie => {
@@ -96,7 +92,7 @@ class MovieTable extends React.Component {
 const mapStateToProps = state => {
   return {
     moviesList: state.global.moviesToRender,
-    genres: state.app.genres,
+    genres: state.global.genres,
     tableViewType: state.changeTableView.tableViewType,
     favorites: state.global.favorites
   };

@@ -9,29 +9,15 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PopularMovies from "./components/PopularMovies";
 
-import getData from "./api";
-import { API_KEY, API_LINK } from "./config";
-
-import { addGenres } from "./store/app/actions";
-import { initFavorites } from "./store/actions";
+import { initFavorites, fetchGenres } from "./store/actions";
 
 class App extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
-    this.props.initFavorites(
-      localStorage
-        .getItem("favoriteMoviesList")
-        .split(",")
-        .filter(item => {
-          return typeof item === "nuber";
-        })
-    );
-    const URL = `${API_LINK}/genre/movie/list${API_KEY}`;
-    getData(URL).then(({ genres }) => {
-      this.props.addGenres(genres);
-    });
+    this.props.fetchGenres();
+    this.props.initFavorites();
   }
   render() {
     return (
@@ -49,13 +35,19 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    genres: state.app.genres
+    genres: state.global.genres
   };
 };
 
-const mapDispatchToProps = {
-  addGenres,
-  initFavorites
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchGenres: () => {
+      dispatch(fetchGenres(dispatch));
+    },
+    initFavorites: () => {
+      dispatch(initFavorites(dispatch));
+    }
+  };
 };
 
 export default connect(

@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import MovieTable from "./MovieTable";
 import ChangeTableView from "./ChangeTableView";
 
-import { addToRenderList } from "../store/actions";
-import getData from "../api";
+import { fetchMovieList } from "../store/actions";
 import { API_KEY, API_LINK } from "../config";
 
 class PopularMovies extends React.Component {
@@ -15,9 +14,7 @@ class PopularMovies extends React.Component {
   }
   componentDidMount() {
     const URL = `${API_LINK}/movie/popular${API_KEY}`;
-    getData(URL).then(({ results }) => {
-      this.props.addToRenderList(results);
-    });
+    this.props.getListToRender(URL);
   }
   render() {
     return (
@@ -32,9 +29,11 @@ class PopularMovies extends React.Component {
   }
 }
 
-const mapDispatchToProps = {
-  addToRenderList
-};
+const mapDispatchToProps = dispatch => ({
+  getListToRender: url => {
+    dispatch(fetchMovieList(url));
+  }
+});
 
 export default connect(
   null,

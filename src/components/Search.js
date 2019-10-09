@@ -1,51 +1,37 @@
 import React from "react";
-import MovieTable from "./MovieTable";
-import getData from "../api";
-import { API_KEY } from "../config";
+import { connect } from "react-redux";
 
-class PopularMovies extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tableView: "tile"
-    };
-  }
-  handleChangeTableView(tableType) {
-    this.setState({ tableView: tableType });
-  }
+import MovieTable from "./MovieTable";
+import ChangeTableView from "./ChangeTableView";
+
+import { fetchMoviesBySearchQuery } from "../store/actions";
+
+class Search extends React.Component {
   componentDidMount() {
-    const URL = "https://api.themoviedb.org/3/search/movie" + API_KEY + "&query=" + this.props.match.params.query;
-    getData(URL).then(({ results }) => {
-      this.setState({ moviesList: results });
-    });
+    this.props.getMoviesBySearchQuery(this.props.match.params.query);
+  }
+  componentDidUpdate() {
+    this.props.getMoviesBySearchQuery(this.props.match.params.query);
   }
   render() {
     return (
       <div className="container">
         <div className="section-header">
           <h1 className="h1">Popular movies</h1>
-          <div>
-            <button
-              className="btn-icon icon-tile"
-              onClick={() => {
-                this.handleChangeTableView("tile");
-              }}
-            />
-            <button
-              className="btn-icon icon-rows"
-              onClick={() => {
-                this.handleChangeTableView("rows");
-              }}
-            />
-          </div>
+          <ChangeTableView />
         </div>
-        <MovieTable
-          tableView={this.state.tableView}
-          list={this.state.moviesList}
-        />
+        <MovieTable />
       </div>
     );
   }
 }
 
-export default PopularMovies;
+const mapDispatchToProps = dispatch => ({
+  getMoviesBySearchQuery: query => {
+    dispatch(fetchMoviesBySearchQuery(query));
+  }
+});
+export default connect(
+  null,
+  mapDispatchToProps
+)(Search);
